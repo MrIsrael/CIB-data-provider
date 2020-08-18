@@ -28,5 +28,6 @@ module.exports.scrapeNyseCib = async function(url) {
   return ({nyse_cib})
 }
 
+// URLs DE ACCESO:
 // scrapeUsdCop('https://es.tradingview.com/symbols/USDCOP/')
 // scrapeNyseCib('https://es.tradingview.com/symbols/NYSE-CIB/')

@@ -6,11 +6,14 @@ const scraper = require('./scrapers')
 const app = express()
 app.use(express.json())
 
-// Data holder
-let data = []
+// Endpoints
+// Incluir un endpoint que retorne un texto, indicando la ruta de entrada correcta a la API de datos.
+app.get('/', (req, res) => {
+  res.send('This is the CIB-data-provider entry endpoint. To get real time data, send your GET request to: /api/data.')
+})
 
-// Endpoint
 app.get('/api/data', async (req, res) => {
+  let data = []
   data[0] = await scraper.scrapeUsdCop('https://es.tradingview.com/symbols/USDCOP/')
   data[1] = await scraper.scrapeNyseCib('https://es.tradingview.com/symbols/NYSE-CIB/')
   res.send(data)
