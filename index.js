@@ -4,6 +4,12 @@ const scraper = require('./scrapers')
 
 // Required statements to properly use Express framework
 const app = express()
+// enable CORS for all resources on server
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+  next()
+})
 app.use(express.json())
 
 // Endpoints
