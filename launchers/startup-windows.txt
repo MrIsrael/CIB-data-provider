@@ -1,4 +1,0 @@
-Poner accesos directos de los 2 archivos .bat que están en la carpeta "launchers", dentro de la carpeta que se abre al ejecutar:
-Windows + R  --->  shell:startup
-
-De esa forma, la aplicación arrancará automáticamente al iniciar Windows.

@@ -1,0 +1,37 @@
+===================================================================================================================================
+WINDOWS
+===================================================================================================================================
+
+Poner accesos directos de los 2 archivos .bat que están en la carpeta "launchers", dentro de la carpeta que se abre al ejecutar:
+Windows + R  --->  shell:startup
+
+De esa forma, la aplicación arrancará automáticamente al iniciar Windows.
+
+
+===================================================================================================================================
+MAC
+===================================================================================================================================
+
+- En la terminal, ejecutar:
+$ sudo nano ~/.bash_profile
+
+- En el editor de texto "nano", agregar las siguientes líneas al final del archivo:
+alias cibp='cd ~/Documents/DEV/Code/CIB-data-provider; pwd; nodemon index.js'
+alias cibm='cd ~/Documents/DEV/Code/CIB-data-monitor; pwd; live-server'
+
+ó:
+
+alias cibp='cd ~/Desktop/CIB-data-scrapper/CIB-data-provider; pwd; nodemon index.js'
+alias cibm='cd ~/Desktop/CIB-data-scrapper/CIB-data-monitor; pwd; live-server'
+
+- Para salvar y guardar, presionar, en orden: 
+Ctrl + O, enter, Ctrl + X
+
+- De nuevo en la terminal, ejecutar:
+$ source ~/.bash_profile
+Este comando actualiza el perfil de usuario personalizado y activa los alias recién creados. Es como reiniciar la terminal.
+
+- En adelante, para arrancar ambos programas desde la terminal con los alias creados, se abre una nueva ventana de terminal, ejecutando:
+$ cibp          --> Ejecuta CIB-data-provider, usando nodemon
+Cmd + t         --> Abre nueva pestaña de la terminal
+$ cibm          --> Ejecuta CIB-data-monitor, usando live-server, y abre automáticamente el frontend en una nueva pestaña del navegador predeterminado
